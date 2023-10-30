@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf".org>
+<head>
+    <title>Edit House</title>
+</head>
+<body>
+    <h1>Edit House</h1>
+    <form class="form" th:action="@{/houses/doUpdateHouse/{id}(id=${house.id})}" th:object="${house}" method="post">
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Name of Property</td>
+                <td><input type="text" th:field="*{nameOfProperty}"/></td>
+            </tr>
+
+            <tr>
+                <td>Location</td>
+                <td><input type="text" th:field="*{location}"/></td>
+            </tr>
+
+            <tr>
+                <td>Square Feet</td>
+                <td><input type="text" th:field="*{squareFeet}"/></td>
+            </tr>
+
+            <tr>
+                <td>Date of Construction</td>
+                <td><input type="text" th:field="*{dateOfConstruction}"/></td>
+            </tr>
+
+            <tr>
+                <td>Photo File Name</td>
+                <td><input type="text" th:field="*{photoFileName}"/></td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td><input type="text" th:field="*{description}"/></td>
+            </tr>
+
+            <tr>
+                <td>Value</td>
+                <td><input type="text" th:field="*{value}"/></td>
+            </tr>
+        </table>
+        <button type="submit">Edit House</button>
+    </form>
+</body>
+</html>

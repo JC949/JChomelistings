@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form th:action="@{/houses/search}" method="get">
+            <label for="id">Search by House ID:</label>
+            <input type="text" id="id" name="id"><br><br>
+            <button type="submit">Search</button>
+        </form>
+              
+        
+        <h1 th:text="${title}"></h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>House Name</th>
+                <th>Location</th>
+                <th>Square Feet</th>
+                <th>Date of Construction</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>Value</th>
+            </tr>
+            <tr th:each="house : ${houses}">
+                <!-- ID -->
+                <td th:text="${house.id}"></td>
+                <!-- Name of Property -->                    
+                <td th:text="${house.nameOfProperty}"></td>
+                <!-- Location -->                    
+                <td th:text="${house.location}"></td>
+                <!-- Square Feet -->
+                <td th:text="${house.squareFeet}"></td>
+                <!-- Date of Construction -->
+                <td th:text="${house.dateOfConstruction}"></td>
+                <!-- Photo File Name -->    
+                <td th:text="${house.photoFileName}"></td>
+                <!-- Description -->
+                <td th:text="${house.description}"></td>
+                <!-- Value -->
+                <td th:text="${house.value}"></td>
+            
+                <td>
+                    <a th:href="@{/houses/editHouse/{id}(id=${house.id})}" class="btn btn-primary">Edit</a>
+
+                    <a th:href="@{/houses/doDeleteHouse/{id}(id=${house.id})}" class="btn btn-primary">Delete</a>
+                </td>
+                    
+            </tr>
+        </table>
+        
+        <a th:href="@{/houses/addHouse}" class="btn btn-primary">Add a House</a>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <button href="redirect:/houses">Return to list of houses</button>
+    <title>Search Results:</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" th:field="{house.id}" /></td>
+            </tr>
+            <tr>
+                <td>Name of Property</td>
+                <td><input type="text" th:field="{house.nameOfProperty}" /></td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td><input type="text" th:field="{house.location}" /></td>
+            </tr>
+            <tr>
+                <td>Square Feet</td>
+                <td><input type="text" th:field="{house.squareFeet}" /></td>
+            </tr>
+            <tr>
+                <td>Date of Construction</td>
+                <td><input type="text" th:field="{house.dateOfConstruction}" /></td>
+            </tr>
+            <tr>
+                <td>Photo File Name</td>
+                <td><input type="text" th:field="{house.photoFileName}" /></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" th:field="{house.description}" /></td>
+            </tr>
+            <tr>
+                <td>Value</td>
+                <td><input type="text" th:field="{house.value}" /></td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>
